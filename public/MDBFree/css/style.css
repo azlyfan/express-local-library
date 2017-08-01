@@ -1,0 +1,24 @@
+/* YOUR CUSTOM STYLES */
+.extra-margins {
+    margin-top: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+main {
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+}
+
+html,
+body,
+.view {
+    height: 100%;
+}
+
+.view {
+    background: url("../../images/alexandra-daddario-wallpaper-3.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}

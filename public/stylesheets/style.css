@@ -1,0 +1,13 @@
+body {
+	font-family: "UTM Avo";
+}
+
+.sidebar-nav {
+    margin-top: 20px;
+    padding: 0;
+    list-style: none;
+}
+
+.content {
+	font-size: 1.2em;
+}

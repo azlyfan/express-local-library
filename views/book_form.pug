@@ -1,0 +1,49 @@
+extends layout
+
+block content
+	h1 #{title}
+
+	<form method="POST" action="">
+		<div class="form-group">
+			<label for="title">Title</label>
+			input(type="text" class="form-control" name="title" id="title" placeholder="Name of book" value=(book)?book.title:"")
+		</div>
+		<div class="form-group">
+			<label for="author">Author</label>
+			<select class="form-control" name="author" id="author" placeholder="Select author" required="true">
+				if (book) 
+					each author in authors
+						option(value=author._id selected=(author._id.toString() == book.author.toString()) ? true:false) #{author.name}
+					
+				else
+					each author in authors
+						option(value=author._id) #{author.name}
+			</select>
+			
+		</div>
+
+		<div class="form-group">
+			<label for="summary">Summary</label>
+			input(type="text" class="form-control" name="summary" id="summary" placeholder="Summary" value=(book)?book.summary:"")
+		</div>
+
+		<div class="form-group">
+			<label for="isbn">ISBN</label>
+			input(type="text" class="form-control" name="isbn" id="isbn" placeholder="ISBN13" value=(book)?book.isbn:"")
+		</div>
+		
+		<div class="checkbox">
+			each genre in genres
+				<label style="margin-right: 1.5em">
+					input(type="checkbox" checked=genre.checked name="genre" id=genre._id value=genre._id style="margin-top:0.4em")
+					span #{genre.name}
+				</label>
+		</div>
+
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+
+	if errors 
+		ul
+			for error in errors
+				li!= error.msg

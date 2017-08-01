@@ -1,0 +1,27 @@
+doctype html
+html
+	head
+		if (title != undefined)
+			title #{title.toUpperCase()}
+		else
+			title No title
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+		<!-- Bootstrap core CSS -->
+		<link href="/MDBFree/css/bootstrap.min.css" rel="stylesheet">
+		<!-- Material Design Bootstrap -->
+		<link href="/MDBFree/css/mdb.min.css" rel="stylesheet">
+		<!-- Your custom styles (optional) -->
+		<link href="/MDBFree/css/style.css" rel="stylesheet">
+	body
+		block content
+
+		<!-- SCRIPTS -->
+		<!-- JQuery -->
+		<script type="text/javascript" src="/MDBFree/js/jquery-3.1.1.min.js"></script>
+		<!-- Bootstrap tooltips -->
+		<script type="text/javascript" src="/MDBFree/js/tether.min.js"></script>
+		<!-- Bootstrap core JavaScript -->
+		<script type="text/javascript" src="/MDBFree/js/bootstrap.min.js"></script>
+		<!-- MDB core JavaScript -->
+		<script type="text/javascript" src="/MDBFree/js/mdb.min.js"></script>

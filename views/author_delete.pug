@@ -1,0 +1,31 @@
+extends layout
+
+block content
+	h1 Author: #{author.name}
+	p #{author.date_of_birth} - #{author.date_of_death}
+
+	if (book_list.length > 0)
+		<div class="alert alert-danger" role="alert">
+			<span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span>
+			strong(style="margin-left:1ex")  Delete the following books before attempting to delete this author.
+		</div>
+
+		<div style="padding-left: 3em">
+			h3 Books
+
+			each book in book_list
+				p
+					a(href=book.url) #{book.title}
+				p= book.summary
+
+			else
+				p There are no books of this author.
+		</div>
+	else
+		form(action="" method="post")
+			p
+				<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+				strong(style="margin-left:1ex") Are you sure you want to permanently delete this Author?
+			<button type="submit" class="btn btn-primary">Delete</button>
+
+		

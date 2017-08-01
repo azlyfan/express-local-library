@@ -1,0 +1,13 @@
+extends layout
+
+block content
+	h1 Gerne: #{genre.name}
+	h3 Books
+
+	each book in book_list
+		p
+			a(href=book.url) #{book.title}
+		p= book.summary
+
+	else
+		p There are no books in this genre.
